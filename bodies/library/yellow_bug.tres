@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BodyDef" load_steps=7 format=3]
+
+; A round yellow body, two small white eyes, and a sticky black nose.
+; Forward is -Z, so the eyes and nose sit at z = -0.5 (the front of the body).
+; Enum values are stored as numbers. See body_part.gd:
+;   shape:    0 SPHERE, 1 CUBE, 2 CAPSULE, 3 CYLINDER
+;   color:    0 RED, 1 ORANGE, 2 YELLOW, 3 GREEN, 4 BLUE, 5 PURPLE, 6 WHITE, 7 BLACK
+;   property: 0 NONE, 1 STICKY, 2 HEAVY, 3 BOUNCY, 4 SPIKY
+
+[ext_resource type="Script" path="res://bodies/body_part.gd" id="part_script"]
+[ext_resource type="Script" path="res://bodies/body_def.gd" id="def_script"]
+
+[sub_resource type="Resource" id="body"]
+script = ExtResource("part_script")
+shape = 0
+position = Vector3(0, 0, 0)
+stretch = Vector3(1, 1, 1)
+color = 2
+property = 0
+
+[sub_resource type="Resource" id="left_eye"]
+script = ExtResource("part_script")
+shape = 0
+position = Vector3(-0.25, 0.25, -0.5)
+stretch = Vector3(0.25, 0.25, 0.25)
+color = 6
+property = 0
+
+[sub_resource type="Resource" id="right_eye"]
+script = ExtResource("part_script")
+shape = 0
+position = Vector3(0.25, 0.25, -0.5)
+stretch = Vector3(0.25, 0.25, 0.25)
+color = 6
+property = 0
+
+[sub_resource type="Resource" id="nose"]
+script = ExtResource("part_script")
+shape = 1
+position = Vector3(0, 0, -0.5)
+stretch = Vector3(0.25, 0.25, 0.25)
+color = 7
+property = 1
+
+[resource]
+script = ExtResource("def_script")
+display_name = "Yellow Bug"
+parts = Array[ExtResource("part_script")]([SubResource("body"), SubResource("left_eye"), SubResource("right_eye"), SubResource("nose")])

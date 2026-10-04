@@ -1,0 +1,8 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="ITEMBOX"
+run/main_scene="res://debug/body_report.tscn"
+config/features=PackedStringArray("4.7")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://debug/body_report.gd" id="report_script"]
+
+[node name="BodyReport" type="Node"]
+script = ExtResource("report_script")

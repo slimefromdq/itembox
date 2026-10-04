@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BodyDef" load_steps=4 format=3]
+
+; One big orange bouncy sphere, 0.5 m wide.
+; Enum values are stored as numbers. See body_part.gd:
+;   shape:    0 SPHERE, 1 CUBE, 2 CAPSULE, 3 CYLINDER
+;   color:    0 RED, 1 ORANGE, 2 YELLOW, 3 GREEN, 4 BLUE, 5 PURPLE, 6 WHITE, 7 BLACK
+;   property: 0 NONE, 1 STICKY, 2 HEAVY, 3 BOUNCY, 4 SPIKY
+
+[ext_resource type="Script" path="res://bodies/body_part.gd" id="part_script"]
+[ext_resource type="Script" path="res://bodies/body_def.gd" id="def_script"]
+
+[sub_resource type="Resource" id="ball"]
+script = ExtResource("part_script")
+shape = 0
+position = Vector3(0, 0, 0)
+stretch = Vector3(0.5, 0.5, 0.5)
+color = 1
+property = 3
+
+[resource]
+script = ExtResource("def_script")
+display_name = "Basketball"
+parts = Array[ExtResource("part_script")]([SubResource("ball")])
