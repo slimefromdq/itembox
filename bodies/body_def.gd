@@ -4,8 +4,9 @@
 class_name BodyDef
 extends Resource
 
-## Mass per cubic meter. The same for every part for now; HEAVY will scale it later.
-const DENSITY := 1.0
+## Mass per cubic meter, the same for every part for now (HEAVY will scale it later).
+## 10 makes the basketball weigh about 0.65 kg, close to a real one.
+const DENSITY := 10.0
 ## The center of mass may sit at most this fraction of the collider radius away
 ## from the origin, so one heavy part can't make the body spin like a helicopter.
 const COM_MAX_FRACTION := 0.25
